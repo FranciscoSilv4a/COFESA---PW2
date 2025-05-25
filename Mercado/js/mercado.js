@@ -41,7 +41,7 @@ function sliderMostrar(){
 //Verificação de qual cofesa esta sendo exibido Fim
 
 
-function passarSlider(){
+function voltarSlider() {
     sliderRemover();
     if(sliderAtivo == 0){
         sliderAtivo = slider.length - 1;
@@ -51,8 +51,16 @@ function passarSlider(){
     }
     sliderMostrar();
 }
+function passarSlider() {
+    if(sliderAtivo == slider.length - 1) {
+        sliderAtivo = 0;
+    }
+    else {
+        sliderAtivo ++;
+    }
+}
 
+btnAntes.addEventListener('click', voltarSlider);
 btnDepois.addEventListener('click', passarSlider);
-btnAntes.addEventListener('click', passarSlider);
 
 sliderMostrar();
