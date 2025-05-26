@@ -52,12 +52,14 @@ function voltarSlider() {
     sliderMostrar();
 }
 function passarSlider() {
+    sliderRemover();
     if(sliderAtivo == slider.length - 1) {
         sliderAtivo = 0;
     }
     else {
         sliderAtivo ++;
     }
+    sliderMostrar();
 }
 
 btnAntes.addEventListener('click', voltarSlider);
