@@ -59,32 +59,5 @@
       </div>
     <!--container-slider Fim-->
     </div>
-    <!--Container-polos Fim-->
-
-    <div class="container-items">
-      <span class = "spanDisplay">title-img1</span>
-      <img src="imagens/img1.webp" alt="Amido de Milho Maizena 200g" class = "display-produtos" id = "produto1">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
-
-      <span class = "spanDisplay">title-img2</span>
-      <img src="imagens/img2.webp" alt="Arroz Tipo 1 Solito Pacote 5kg" class = "display-produtos" id = "produto2">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
-
-      <span class = "spanDisplay">title-img3</span>
-      <img src="imagens/img3.webp" alt="Açucar Refinado União Fit Light 500g" class = "display-produtos" id = "produto3">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
-
-      <span class = "spanDisplay">title-img4</span>
-      <img src="imagens/img4.webp" alt="Coca-Cola Original 1l" class = "display-produtos" id = "produto4">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
-
-      <span class = "spanDisplay">title-img5</span>
-      <img src="imagens/img5.webp" alt="Farinha de Trigo Tipo 1 Anaconda 5kg" class = "display-produtos" id = "produto5">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
-
-      <span class = "spanDisplay">title-img6</span>
-      <img src="imagens/img6.webp" alt="Alcatra Bovina" class = "display-produtos" id = "produto6">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
-    </div>
 </body>
 </html>
