@@ -30,12 +30,12 @@
 
     <!--home-->
     <div class="home">
- <img src="Imagens/Cofesa Logo.png" height="60vh">
-   <ul class="home-itens">
-        <li><a href="#container-slider">POLOS</a></li>
-        <li><a href="#itens">PRODUTOS</a></li>
-        <li><a href="#contato">CONTATO</a></li>
-        </ul>
+    <img src="Imagens/Cofesa Logo.png" height="60vh">
+      <ul class="home-itens">
+          <li><a href="#container-slider">POLOS</a></li>
+          <li><a href="#itens">PRODUTOS</a></li>
+          <li><a href="#contato">CONTATO</a></li>
+      </ul>
     </div>
     <!--home Fim-->
 
