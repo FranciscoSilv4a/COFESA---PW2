@@ -1,5 +1,22 @@
 <?php
-//
+    session_start();
+    $_SESSION['acessoLogin'] = false;
+    $erro = "";
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['email'];
+        if(isset($nome) || isset($email) || isset($senha)) {
+            $_SESSION['nome'] = $nome;
+            $_SESSION['email'] = $email;
+            $_SESSION['senha'] = $senha;
+            $_SESSION['acessoLogin'] = true;
+            header("Location: login.php");
+            exit();
+        }
+        $erro = "Erro: usuário/senha inválidos";
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,17 +28,23 @@
 </head>
 <body>
     <div class="container-menu">
-        <form action="mercado.html" method="POST">
+        <form action="index.php" method="POST">
           <label for="nome">NOME:
           <input type="text" id="nome" name="nome"><br><br>
           </label>
+
           <label for="email">EMAIL:
           <input type="email" id="email" name="email"><br><br>
           </label>
+
           <label for="senha">SENHA:
           <input type="password" id="senha" name="senha"><br><br>
           </label>
+
           <button type="submit" class="btn">Cadastrar</button>
+            <?php if(!empty($erro)): ?>
+                <p style = "color: red" id = "erroMensagem"><?= $erro; ?></p>
+            <?php endif; ?>
         </form>
     </div>
 </body>
