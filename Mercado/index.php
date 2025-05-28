@@ -6,7 +6,7 @@
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = $_POST['email'];
-        if(isset($nome) || isset($email) || isset($senha)) {
+        if(!empty($nome) && !empty($email) && !empty($senha)) {
             $_SESSION['nome'] = $nome;
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
@@ -15,8 +15,7 @@
             exit();
         }
         else {
-            $erro = "Erro: usuário/senha inválidos";
-            exit();
+            $erro = "Erro: usuário/email/senha inválidos";
         }
     }
 ?>
@@ -30,7 +29,8 @@
 </head>
 <body>
     <div class="container-menu">
-        <form action="index.php" method="POST">
+        <p id = container-title>Registro</p>
+        <form action= "index.php" method="POST">
           <label for="nome">NOME:
           <input type="text" id="nome" name="nome"><br><br>
           </label>

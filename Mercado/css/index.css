@@ -13,6 +13,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 10%;
     margin-right: 30%;
     margin-left: 30%;
@@ -25,6 +26,15 @@ body{
                 0px 0px 16px 6px rgb(250, 150, 0),
                 0px 0px 32px 10px rgb(250, 150, 0);
     transition: 2s;
+    position: relative;
+}
+
+#container-title {
+    position: absolute;
+    width: 100%;
+    font-size: 2rem;
+    color: rgb(250, 150, 0);
+    top: 1rem;
 }
 
 body:hover{
@@ -100,4 +110,7 @@ button{
     border: 1px solid black;
     background-color: black;
     transition: 2s;
+}
+#erroMensagem {
+    margin-top: 2rem;
 }
