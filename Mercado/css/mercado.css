@@ -14,9 +14,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 10vh;
     background-color: rgb(41, 39, 36);
     color: white;
+    position: relative;
 }
 
 a{
@@ -26,8 +28,8 @@ a{
     color: white;
 }
 
-.container-social p{
-margin-left: 75%;
+.container-social p {
+  margin-left: 75%;
 }
 
 .container-social p, .container-social a{

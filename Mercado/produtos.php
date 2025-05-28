@@ -1,5 +1,9 @@
 <?php
-//
+    session_start();
+    if($_SESSION['acessoMenu'] === false) {
+        header("Location: invasores.php");
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

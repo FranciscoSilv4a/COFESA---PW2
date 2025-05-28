@@ -21,12 +21,12 @@
     <img src="https://img.icons8.com/?size=100&id=9720&format=png&color=FD7E14" height="50vh" id="carrinho">
 
     <div class="container-carrinhoMenu">
-    <a href="#">Ver carrinho</a>
-    <a href="#">Finalizar compra</a>
-    <a href="#">Meus pedidos</a>
-  </div>
+      <a href="#">Ver carrinho</a>
+      <a href="#">Finalizar compra</a>
+      <a href="#">Meus pedidos</a>
+    </div>
 
-    <p>Redes Sociais:</p>
+    <p id = "redes-sociais">Redes Sociais:</p>
     <a href="https://www.facebook.com/cofesamaxitapeva/?locale=pt_BR"><img src="https://img.icons8.com/?size=100&id=8818&format=png&color=FD7E14" height="50vh"></a>
     <a href="https://www.instagram.com/cofesamaxsupermercado/"><img src="https://img.icons8.com/?size=100&id=32309&format=png&color=FD7E14 " height="50vh"></a>
    </div>
@@ -36,7 +36,7 @@
     <div class="home">
     <img src="Imagens/Cofesa Logo.png" height="60vh">
       <ul class="home-itens">
-          <li><a href="mercado.php">POLOS</a></li>
+          <li><a href="mercado.php" id = "polos" style = "background-color: rgb(0, 176, 0); color: white; width: 10vh; height: 6vh; border-radius: 5px;">POLOS</a></li>
           <li><a href="produtos.php">PRODUTOS</a></li>
       </ul>
     </div>

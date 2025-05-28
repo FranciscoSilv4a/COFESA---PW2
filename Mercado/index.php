@@ -1,6 +1,7 @@
 <?php
     session_start();
     $_SESSION['acessoLogin'] = false;
+    $_SESSION['acessoMenu'] = false;
     $erro = "";
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nome = $_POST['nome'];
