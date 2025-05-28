@@ -6,8 +6,8 @@
 
 body{
   background-color: black;
-  transition: 3s;
-  }
+  transition: 2s;
+}
 
 .container-menu{
     display: flex;
@@ -24,42 +24,49 @@ body{
     box-shadow: 0px 0px 8px 2px rgb(250, 150, 0),
                 0px 0px 16px 6px rgb(250, 150, 0),
                 0px 0px 32px 10px rgb(250, 150, 0);
-    transition: 3s;
+    transition: 2s;
 }
 
-   body:hover{
-   background-color: white;
-
-.container-menu{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10%;
-    margin-right: 30%;
-    margin-left: 30%;
-    padding: 10vh;
-    text-align: center;
-    border: 1px solid rgb(250, 150, 0);
-    border-radius: 45px;
+body:hover{
     background-color: white;
-    box-shadow: 0px 0px 8px 2px rgb(250, 150, 0),
-                0px 0px 16px 6px rgb(250, 150, 0),
-                0px 0px 32px 10px rgb(250, 150, 0);
+    .container-menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+        margin-right: 30%;
+        margin-left: 30%;
+        padding: 10vh;
+        text-align: center;
+        border: 1px solid rgb(250, 150, 0);
+        border-radius: 45px;
+        background-color: white;
+        box-shadow: 0px 0px 8px 2px rgb(250, 150, 0),
+                    0px 0px 16px 6px rgb(250, 150, 0),
+                    0px 0px 32px 10px rgb(250, 150, 0);
     }
 
     input{
-   background-color: white;
-   border: 1px solid rgb(250, 150, 0);
+    background-color: white;
+    border: 1px solid rgb(250, 150, 0);
     }
     
     button{
-    border: 1px solid rgb(250, 150, 0);
-    background-color: white;
-}
+        border: 1px solid rgb(250, 150, 0);
+        background-color: white;
+    }
+    button:hover{
+        width: 28vh;
+        height: 7vh;
+        font-size: 20px;
+        text-align: center;
+        background-color: rgb(0, 176, 0);
+        color: white;
+    }
 }
 
 label{
-    transition: 3s;
+    transition: 2s;
 }
 
 label:hover{
@@ -71,7 +78,7 @@ input{
     height: 5vh;
     border-radius: 25px;
     border: 1px solid black;
-    transition: 3s;
+    transition: 2s;
     background-color: black;
 }
 
@@ -92,12 +99,5 @@ button{
     border-radius: 15px;
     border: 1px solid black;
     background-color: black;
-    transition: 3s;
-}
-
-button:hover{
-    width: 28vh;
-    height: 7vh;
-    font-size: 20px;
-    text-align: center;
+    transition: 2s;
 }
