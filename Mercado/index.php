@@ -14,8 +14,10 @@
             header("Location: login.php");
             exit();
         }
-        $erro = "Erro: usuário/senha inválidos";
-        exit();
+        else {
+            $erro = "Erro: usuário/senha inválidos";
+            exit();
+        }
     }
 ?>
 <!DOCTYPE html>
