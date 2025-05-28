@@ -1,0 +1,85 @@
+.container-items {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    justify-content: baseline;
+}
+.display-produtos {
+  display: block;
+  height: 10rem;
+  width: 9rem;
+  border-radius: 10px;
+  margin-left: 2rem;
+}
+
+.amido{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    }
+
+.arroz{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    }
+
+.acucar{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    }
+
+.coca-cola{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    }
+
+.farinha-trigo{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    }
+
+.alcatra{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    }
