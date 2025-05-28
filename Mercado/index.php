@@ -5,7 +5,7 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nome = $_POST['nome'];
         $email = $_POST['email'];
-        $senha = $_POST['email'];
+        $senha = $_POST['senha'];
         if(!empty($nome) && !empty($email) && !empty($senha)) {
             $_SESSION['nome'] = $nome;
             $_SESSION['email'] = $email;

@@ -2,14 +2,13 @@
     session_start();
     $_SESSION['acessoMenu'] = false;
     $erro = "";
-    if($_SESSION['acessoLogin'] == true) {
+    if($_SESSION['acessoLogin'] === true) {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $nome = $_POST['nome'];
             $email = $_POST['email'];
             $senha = $_POST['senha'];
             if(!empty($nome) && !empty($email) && !empty($senha)) {
-                if($nome === $_SESSION['nome'] && $email === $_SESSION['email'] && $senha === $_SESSION['senha']) {
-                    //...
+                if($_SESSION['nome'] == $nome && $_SESSION['email'] == $email && $_SESSION['senha'] == $senha) {
                     $_SESSION['acessoMenu'] = true;
                     header("Location: mercado.php");
                     exit(); // só aqui o exit, se não quebra o código
@@ -25,7 +24,7 @@
     }
     else {
         header("Location: invasores.php");
-        exit();
+        exit(); // aqui também
     }
 ?>
 <!DOCTYPE html>
@@ -39,7 +38,7 @@
 <body>
     <div class="container-menu">
         <p id = container-title>Login</p>
-        <form action= "index.php" method="POST">
+        <form action= "login.php" method="POST">
           <label for="nome">NOME:
           <input type="text" id="nome" name="nome"><br><br>
           </label>

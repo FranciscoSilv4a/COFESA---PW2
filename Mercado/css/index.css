@@ -36,7 +36,15 @@ body{
     color: rgb(250, 150, 0);
     top: 1rem;
 }
-
+button{
+    width: 25vh;
+    height: 5vh;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: black;
+    cursor: pointer;
+    transition: 2s;
+}
 body:hover{
     background-color: white;
     .container-menu{
@@ -103,14 +111,6 @@ input:hover{
     text-align: center;
 }
 
-button{
-    width: 25vh;
-    height: 5vh;
-    border-radius: 15px;
-    border: 1px solid black;
-    background-color: black;
-    transition: 2s;
-}
 #erroMensagem {
     margin-top: 2rem;
 }
