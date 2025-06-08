@@ -1,31 +1,27 @@
 <?php
     session_start();
-    $_SESSION['acessoMenu'] = false;
     $erro = "";
-    if($_SESSION['acessoLogin'] === true) {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $nome = $_POST['nome'];
-            $email = $_POST['email'];
+            $nome = trim($_POST['nome']);
+            $email = trim($_POST['email']);
             $senha = $_POST['senha'];
             if(!empty($nome) && !empty($email) && !empty($senha)) {
-                if($_SESSION['nome'] == $nome && $_SESSION['email'] == $email && $_SESSION['senha'] == $senha) {
-                    $_SESSION['acessoMenu'] = true;
-                    header("Location: mercado.php");
-                    exit(); // só aqui o exit, se não quebra o código
-                }
-                else {
-                    $erro = "Erro: usuário/email/senha não correspondentes";
+                $usersArr = file("usuarios.txt", FILE_IGNORE_NEW_LINES);
+                foreach($usuarios as $linha) {  //  estourando cada linha p pegar informações e depois verificar :)
+                    $dados = explode(':', linha, 3);
+                    if($dados !== 3) continue;
+                    list($nomeArmazenado, $emailArmazenado, $senhaArmazenada) = $dados;
+                    //  verificação de um por um dos dados de cada linha
+                    if($nome === $nomeArmazenado && $email == $emailArmazenado && password_verify($senha, $senhaArmazenada)) {
+                        $_SESSION['acessoPagamento'] = true;
+                        $_SESSION['nome'] = $nome;
+                        header("Location: pagamento.php");
+                        exit();
+                    }
                 }
             }
-            else {
-                $erro = "Erro: usuário/email/senha inválidos";
-            }
+            $erro = "Usuário/email/senha inválidos";
         }
-    }
-    else {
-        header("Location: invasores.php");
-        exit(); // aqui também
-    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -1,5 +1,9 @@
 <?php
-    //
+    session_start();
+    if($_SESSION['acessoPagamento'] !== true) {
+        header("Location: cad.php");
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

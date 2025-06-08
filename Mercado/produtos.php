@@ -1,9 +1,10 @@
 <?php
-    session_start();
+    /*session_start();
     if($_SESSION['acessoMenu'] === false) {
         header("Location: invasores.php");
         exit();
-    }
+    }       Para fazer a verificação aqui, precisa da do login/cad, usando aqui, posteriormente
+            a leitura do arquivo de texto com o nome ou email, e senha*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
