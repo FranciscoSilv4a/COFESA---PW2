@@ -7,7 +7,7 @@
         $email = trim($_POST['email']);
         $senha = $_POST['senha'];
         if(!empty($nome) && !empty($email) && !empty($senha)) {
-            file_put_contents("usuarios.txt", "$nome:$email:$senha\n");
+            file_put_contents("usuarios.txt", "$nome:$email:$senha\n", FILE_APPEND);
             $_SESSION['acessoPagamento'] = true;
             header("Location: pagamento.php");
             exit();

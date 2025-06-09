@@ -6,7 +6,7 @@
             $email = trim($_POST['email']);
             $senha = $_POST['senha'];
             if(!empty($nome) && !empty($email) && !empty($senha)) {
-                $usersArr = file("usuarios.txt", FILE_IGNORE_NEW_LINES);
+                $usuarios = file("usuarios.txt", FILE_IGNORE_NEW_LINES);
                 foreach($usuarios as $linha) {  //  estourando cada linha p pegar informações e depois verificar :)
                     $dados = explode(':', linha, 3);
                     if($dados !== 3) continue;
