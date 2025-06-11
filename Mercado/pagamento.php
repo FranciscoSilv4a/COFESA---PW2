@@ -5,7 +5,7 @@
         exit();
     }
 
-    $produto = "Nome produto";
+    $produto = "Amido de milho";
     $preco = "R$30,00";
     $usuario = $_SESSION['usuario'];
     $endereco = "";
