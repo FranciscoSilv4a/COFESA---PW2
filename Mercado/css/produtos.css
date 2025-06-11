@@ -122,84 +122,55 @@ padding: 3px;
     display: flexbox;
     justify-content: center;
     align-items: center;
-    justify-content: baseline;
+    flex-wrap: wrap;
+    height: 20rem;
+    width: 20rem;
+    background-color: rgb(41, 39, 36);
+    border-radius: 15px;
+    margin: 0 auto;
 }
 .display-produtos {
   display: block;
   height: 10rem;
   width: 9rem;
   border-radius: 10px;
-  margin-left: 2rem;
 }
 
 .amido{
     top: 0;
     left: 0;
     width: 100%;
-    height: 13vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    }
+    flex-wrap: wrap;
+}
+.spanDisplay {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(0, 176, 0);
+}
+#produto1 {
+  margin-top: 0;
+  height: 10rem;
+  width: 10rem;
+}
+.btnDisplayCarrinho {
+    height: 3rem;
+    width: 12rem;
+    margin-top: 0.5rem;
+    border-radius: 10px;
+    background-color: rgb(250, 150, 0);
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    transition: background-color, width 0.5s;
+}
 
-.arroz{
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 13vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    }
-
-.acucar{
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 13vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    }
-
-.coca-cola{
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 13vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    }
-
-.farinha-trigo{
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 13vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    }
-
-.alcatra{
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 13vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    }
+.btnDisplayCarrinho:hover {
+    width: 14rem;
+    background-color: rgb(0, 176, 0);
+}

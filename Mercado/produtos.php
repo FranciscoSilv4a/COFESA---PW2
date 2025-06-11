@@ -42,14 +42,15 @@
     <!--home Fim-->
      <div class="container-items">
       
-      <div class="amido">
-      <span class = "spanDisplay">title-img1</span>
-      <img src="imagens/img1.webp" alt="Amido de Milho Maizena 200g" class = "display-produtos" id = "produto1">
-      <form action="produtos.php" method = "POST">
-        <button type = "submit" class = "btnDisplayCarrinho">comprar</button>
-      </form>
-      </div>
+        <div class="amido">
+        <span class = "spanDisplay">Amido de milho - R$30,00</span>
+        <img src="imagens/img1.webp" alt="Amido de Milho Maizena 200g" class = "display-produtos" id = "produto1">
+        <form action="produtos.php" method = "POST">
+          <button type = "submit" class = "btnDisplayCarrinho">comprar</button>
+        </form>
+        </div>
 
     </div>
+
 </body>
 </html>

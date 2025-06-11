@@ -63,42 +63,45 @@
       </ul>
     </div>
     <!--home Fim-->
-    <h2>Finalizar Compra</h2>
-    <p><strong>Produto: </strong><?= $produto ?></p>
-    <p><strong>Preço: </strong><?= $preco ?></p>
-    <p><strong>Usuário: </strong><?= $usuario ?></p>
-    <p><strong>Endereço de entrega: </strong><?= $endereco?></p>
+      <div class="infContainer">
+      <center>
+        <h2 style = "color: rgb(250, 150, 0)">Finalizar Compra</h2>
+        <p><strong>Produto: </strong><?= $produto ?></p>
+        <p><strong>Preço: </strong><?= $preco ?></p>
+        <p><strong>Usuário: </strong><?= $usuario ?></p>
+        <p><strong>Endereço de entrega: </strong><?= $endereco?></p>
+        <form action="pagamento.php" method = "POST">
+          <label for="formaPagamento" style = "color: rgb(250, 150, 0)"><strong>Forma de pagamento: </strong></label>
+          <select name= "formaPagamento" id="formaPagamento" onchange = "mostrarCamposCartao()" required>
+            <option value="pix">Pix</option>
+            <option value="boleto">Boleto</option>
+            <option value="cartao">Cartão</option>
+          </select>
+          <br>
+          <br>
+          <div id ="dadosCartao" style = "display: none">
+            <h3 style = "color: rgb(250, 150, 0)"><strong>Informções do cartão de crédito</strong></h3>
 
-    <form action="pagamento.php" method = "POST">
-      <label for="formaPagamento"><strong>Forma de pagamento: </strong></label>
-      <select name= "formaPagamento" id="formaPagamento" onchange = "mostrarCamposCartao()" required>
-        <option value="pix">Pix</option>
-        <option value="boleto">Boleto</option>
-        <option value="cartao">Cartão</option>
-      </select>
-      <br>
+            <label for = "numeroCartao">Número do cartão:</label>
+            <input type = "text" name = "numeroCartao" maxlength = "16" oninput = "formatarNum(this)" required></input>
+            <br>
+            <!---->
+            <label for = "nomeCartao">Titular do cartão:</label>
+            <input type = "text" name = "nomeCartao" required></input>
+            <br>
+            <!---->
+            <label for = "dataVencimento">Data de vencimento (MM/YY):</label>
+            <input type = "text" name = "dataVencimento" maxlength = "5" placeholder = "MM/YY" oninput = "formatarData(this)" required></input>
+            <br>
+            <!---->
+            <label for = "cvcCartao">CVC do cartão:</label>
+            <input type = "text" name = "cvcCartao" maxlength = "3" oninput = "formatarNum(this)" required></input>
+            <br>
+          </div>
 
-      <div id ="dadosCartao" style = "display: none">
-        <h3><strong>Informções do cartão de crédito</strong></h3>
-
-        <label for = "numeroCartao">Número do cartão:</label>
-        <input type = "text" name = "numeroCartao" maxlength = "16" oninput = "formatarNum(this)" required></input>
-        <br>
-        <!---->
-        <label for = "nomeCartao">Titular do cartão:</label>
-        <input type = "text" name = "nomeCartao" required></input>
-        <br>
-        <!---->
-        <label for = "dataVencimento">Data de vencimento (MM/YY):</label>
-        <input type = "text" name = "dataVencimento" maxlength = "5" placeholder = "MM/YY" oninput = "formatarData(this)" required></input>
-        <br>
-        <!---->
-        <label for = "cvcCartao">CVC do cartão:</label>
-        <input type = "text" name = "cvcCartao" maxlength = "3" oninput = "formatarNum(this)" required></input>
-        <br>
+          <button type = "submit" id = "btnFinalizar">Finalizar compra</button>
+        </form>
+      </center>
       </div>
-
-      <button type = "submit">Finalizar compra</button>
-    </form>
 </body>
 </html>
