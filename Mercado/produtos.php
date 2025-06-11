@@ -1,10 +1,8 @@
 <?php
-    /*session_start();
-    if($_SESSION['acessoMenu'] === false) {
-        header("Location: invasores.php");
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        header("Location: pagamento.php");
         exit();
-    }       Para fazer a verificação aqui, precisa da do login/cad, usando aqui, posteriormente
-            a leitura do arquivo de texto com o nome ou email, e senha*/
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,44 +13,41 @@
     <title>Produtos</title>
 </head>
 <body>
+    <div class="container-social">
+      <img src="https://img.icons8.com/?size=100&id=9720&format=png&color=FD7E14" height="50vh" id="carrinho">
+
+      <div class="container-carrinhoMenu">
+        <a href="#">Ver carrinho</a>
+        <a href="#">Meus pedidos</a>
+      </div>
+
+        <span id = "pageTitle">PRODUTOS</span>
+
+      <p id = "redes-sociais">Redes Sociais:</p>
+      <a href="https://www.facebook.com/cofesamaxitapeva/?locale=pt_BR"><img src="https://img.icons8.com/?size=100&id=8818&format=png&color=FD7E14" height="50vh"></a>
+      <a href="https://www.instagram.com/cofesamaxsupermercado/"><img src="https://img.icons8.com/?size=100&id=32309&format=png&color=FD7E14 " height="50vh"></a>
+   </div>
+    <!--container-social Fim-->
+
+    <!--home-->
+    <div class="home">
+    <img src="Imagens/Cofesa Logo.png" height="60vh">
+      <ul class="home-itens">
+          <li><a href="index.php" id = "polos">POLOS</a></li>
+          <li><a href="produtos.php">PRODUTOS</a></li>
+      </ul>
+    </div>
+    <!--home Fim-->
      <div class="container-items">
       
-          <div class="amido">
+      <div class="amido">
       <span class = "spanDisplay">title-img1</span>
       <img src="imagens/img1.webp" alt="Amido de Milho Maizena 200g" class = "display-produtos" id = "produto1">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
+      <form action="produtos.php" method = "POST">
+        <button type = "submit" class = "btnDisplayCarrinho">comprar</button>
+      </form>
       </div>
 
-      <div class="arroz">
-      <span class = "spanDisplay">title-img2</span>
-      <img src="imagens/img2.webp" alt="Arroz Tipo 1 Solito Pacote 5kg" class = "display-produtos" id = "produto2">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="acucar">
-      <span class = "spanDisplay">title-img3</span>
-      <img src="imagens/img3.webp" alt="Açucar Refinado União Fit Light 500g" class = "display-produtos" id = "produto3">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="coca-cola">
-      <span class = "spanDisplay">title-img4</span>
-      <img src="imagens/img4.webp" alt="Coca-Cola Original 1l" class = "display-produtos" id = "produto4">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="farinha-trigo">
-      <span class = "spanDisplay">title-img5</span>
-      <img src="imagens/img5.webp" alt="Farinha de Trigo Tipo 1 Anaconda 5kg" class = "display-produtos" id = "produto5">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
-      </div>
-      
-      <div class="alcatra">
-      <span class = "spanDisplay">title-img6</span>
-      <img src="imagens/img6.webp" alt="Alcatra Bovina" class = "display-produtos" id = "produto6">
-      <button class = "btnDisplayCarrinho">Adicionar ao carrinho</button>
-      </div>
-      
     </div>
 </body>
 </html>

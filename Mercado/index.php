@@ -1,10 +1,3 @@
-<?php
-    session_start();
-    /*if($_SESSION['acessoMenu'] === false || $_SESSION['acessoLogin'] === false) {
-      header("Location: invasores.php");
-      exit();
-    }*/
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

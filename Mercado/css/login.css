@@ -113,3 +113,11 @@ input:hover{
 #erroMensagem {
     margin-top: 2rem;
 }
+#link {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#link:visited {
+    color: rgb(250, 150, 0);
+}

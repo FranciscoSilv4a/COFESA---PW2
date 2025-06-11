@@ -1,26 +1,28 @@
 <?php
     session_start();
+
     $erro = "";
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $nome = trim($_POST['nome']);
             $email = trim($_POST['email']);
             $senha = $_POST['senha'];
-            if(!empty($nome) && !empty($email) && !empty($senha)) {
+            if(!empty($email) && !empty($senha)) {
                 $usuarios = file("usuarios.txt", FILE_IGNORE_NEW_LINES);
                 foreach($usuarios as $linha) {  //  estourando cada linha p pegar informações e depois verificar :)
-                    $dados = explode(':', linha, 3);
-                    if($dados !== 3) continue;
-                    list($nomeArmazenado, $emailArmazenado, $senhaArmazenada) = $dados;
+                    $dados = explode(':', linha);
+                    list($nomeArmazenado, $emailArmazenado, $senhaArmazenada, $enderecoArmazenado) = $dados;
                     //  verificação de um por um dos dados de cada linha
-                    if($nome === $nomeArmazenado && $email == $emailArmazenado && password_verify($senha, $senhaArmazenada)) {
+                    if($email == $emailArmazenado && $senha == $senhaArmazenada) {
                         $_SESSION['acessoPagamento'] = true;
-                        $_SESSION['nome'] = $nome;
+                        $_SESSION['usuario'] = $nomeArmazenado;
                         header("Location: pagamento.php");
                         exit();
                     }
+                    else {
+                        $erro = "Email/senha não correspondentes";
+                    }
                 }
             }
-            $erro = "Usuário/email/senha inválidos";
+            $erro = "Email/senha inválidos";
         }
 ?>
 <!DOCTYPE html>
@@ -35,10 +37,6 @@
     <div class="container-menu">
         <p id = container-title>Login</p>
         <form action= "login.php" method="POST">
-          <label for="nome">NOME:
-          <input type="text" id="nome" name="nome"><br><br>
-          </label>
-
           <label for="email">EMAIL:
           <input type="email" id="email" name="email"><br><br>
           </label>
@@ -52,6 +50,7 @@
                 <p style = "color: red" id = "erroMensagem"><?= $erro; ?></p>
             <?php endif; ?>
         </form>
+        <a href="cad.php" id = "link" style = "color: rgb(250, 150, 0); margin-top: 1rem;">Não tenho cadastro</a>
     </div>
 </body>
 </html>

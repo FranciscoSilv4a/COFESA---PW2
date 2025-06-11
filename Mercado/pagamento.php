@@ -1,8 +1,29 @@
 <?php
     session_start();
     if($_SESSION['acessoPagamento'] !== true) {
-        header("Location: cad.php");
+        header("Location: login.php");
         exit();
+    }
+
+    $produto = "Nome produto";
+    $preco = "R$30,00";
+    $usuario = $_SESSION['usuario'];
+    $endereco = "";
+
+    $usuarios = file("usuarios.txt", FILE_IGNORE_NEW_LINES);
+    foreach($usuarios as $linha) {
+      $dados = explode(":", $linha);
+      list($nomeArmazenado, $emailArmazenado, $senhaArmazenada, $enderecoArmazenado) = $dados;
+
+      if($usuario == $nomeArmazenado) {
+        $endereco = $enderecoArmazenado;
+        break;
+      }
+    }
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+      header("Location: fim.php");
+      exit();
     }
 ?>
 <!DOCTYPE html>
@@ -12,6 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento</title>
     <link rel = "stylesheet" href = "css/pagamento.css">
+    <script defer src = "js/pagamento.js"></script>
 </head>
 <body>
 <div class="container-social">
@@ -34,10 +56,47 @@
     <div class="home">
     <img src="Imagens/Cofesa Logo.png" height="60vh">
       <ul class="home-itens">
-          <li><a href="mercado.php" id = "polos">POLOS</a></li>
+          <li><a href="index.php" id = "polos">POLOS</a></li>
           <li><a href="produtos.php">PRODUTOS</a></li>
       </ul>
     </div>
     <!--home Fim-->
+    <h2>Finalizar Compra</h2>
+    <p><strong>Produto: </strong><?= $produto ?></p>
+    <p><strong>Preço: </strong><?= $preco ?></p>
+    <p><strong>Usuário: </strong><?= $usuario ?></p>
+    <p><strong>Endereço de entrega: </strong><?= $endereco?></p>
+
+    <form action="pagamento.php" method = "POST">
+      <label for="formaPagamento">Forma de pagamento:</label>
+      <select name= "formaPagamento" id="formaPagamento" onchange = "mostrarCamposCartao()" required>
+        <option value="pix">Pix</option>
+        <option value="boleto">Boleto</option>
+        <option value="cartao">Cartão</option>
+      </select>
+      <br>
+
+      <div id ="dadosCartao" style = "display: none">
+        <h3><strong>Informções do cartão de crédito</strong></h3>
+
+        <label for = "numeroCartao">Número do cartão:</label>
+        <input type = "text" name = "numeroCartao" maxlength = "16" oninput = "formatarNum(this)" required></input>
+        <br>
+        <!---->
+        <label for = "nomeCartao">Titular do cartão:</label>
+        <input type = "text" name = "nomeCartao" required></input>
+        <br>
+        <!---->
+        <label for = "dataVencimento">Data de vencimento (MM/YY):</label>
+        <input type = "text" name = "dataVencimento" maxlength = "5" placeholder = "MM/YY" oninput = "formatarData(this)" required></input>
+        <br>
+        <!---->
+        <label for = "cvcCartao">CVC do cartão:</label>
+        <input type = "text" name = "cvcCartao" maxlength = "3" oninput = "formatarNum(this)" required></input>
+        <br>
+      </div>
+
+      <button type = "submit">Finalizar compra</button>
+    </form>
 </body>
 </html>

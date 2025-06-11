@@ -99,7 +99,7 @@ input{
     background-color: black;
 }
 
-input[type = 'password'], label[for = 'senha']{
+#endereco, label[for = 'endereco']{
    margin-bottom: 5vh;
 }
 
@@ -115,7 +115,10 @@ form {
 #erroMensagem {
     margin-top: 2rem;
 }
-#loginLink {
+#link {
     width: 100%;
     margin-top: 1rem;
+}
+#link:visited {
+    color: rgb(250, 150, 0);
 }
