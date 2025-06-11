@@ -20,8 +20,9 @@
         break;
       }
     }
-
+    $_SESSION['pagou'] = false;
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $_SESSION['pagou'] = true;
       header("Location: fim.php");
       exit();
     }
@@ -58,6 +59,7 @@
       <ul class="home-itens">
           <li><a href="index.php" id = "polos">POLOS</a></li>
           <li><a href="produtos.php">PRODUTOS</a></li>
+          <li><a href="login.php">LOGIN</a></li>
       </ul>
     </div>
     <!--home Fim-->
@@ -68,7 +70,7 @@
     <p><strong>Endereço de entrega: </strong><?= $endereco?></p>
 
     <form action="pagamento.php" method = "POST">
-      <label for="formaPagamento">Forma de pagamento:</label>
+      <label for="formaPagamento"><strong>Forma de pagamento: </strong></label>
       <select name= "formaPagamento" id="formaPagamento" onchange = "mostrarCamposCartao()" required>
         <option value="pix">Pix</option>
         <option value="boleto">Boleto</option>

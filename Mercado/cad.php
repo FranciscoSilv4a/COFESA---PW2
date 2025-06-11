@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION['pagou'] = false;
     $erro = "";
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nome = trim($_POST['nome']);

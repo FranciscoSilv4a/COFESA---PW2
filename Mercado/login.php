@@ -1,6 +1,6 @@
 <?php
     session_start();
-
+    $_SESSION['pagou'] = false;
     $erro = "";
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $email = trim($_POST['email']);
@@ -8,10 +8,11 @@
             if(!empty($email) && !empty($senha)) {
                 $usuarios = file("usuarios.txt", FILE_IGNORE_NEW_LINES);
                 foreach($usuarios as $linha) {  //  estourando cada linha p pegar informações e depois verificar :)
-                    $dados = explode(':', linha);
+                    $dados = explode(':', $linha);
                     list($nomeArmazenado, $emailArmazenado, $senhaArmazenada, $enderecoArmazenado) = $dados;
                     //  verificação de um por um dos dados de cada linha
                     if($email == $emailArmazenado && $senha == $senhaArmazenada) {
+                        $_SESSION['logouPrimaVez'] = 1;
                         $_SESSION['acessoPagamento'] = true;
                         $_SESSION['usuario'] = $nomeArmazenado;
                         header("Location: pagamento.php");

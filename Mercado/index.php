@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['logouPrimaVez'])) {
+    $_SESSION['acessoPagamento'] = false;
+  }
+  $_SESSION['pagou'] = false;
+  file_put_contents("usuarios.txt","", FILE_APPEND);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,7 +14,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" href="Imagens/cofesa icon.png">
     <script defer src = "js/mercado.js"></script>
-    <title>Cofesa</title>
+    <title>Polos</title>
 </head>
 <body>
     <!--container-social-->
@@ -31,6 +39,7 @@
       <ul class="home-itens">
           <li><a href="mercado.php" id = "polos" style = "background-color: rgb(0, 176, 0); color: white; width: 10vh; height: 6vh; border-radius: 5px;">POLOS</a></li>
           <li><a href="produtos.php">PRODUTOS</a></li>
+          <li><a href="login.php">LOGIN</a></li>
       </ul>
     </div>
     <!--home Fim-->

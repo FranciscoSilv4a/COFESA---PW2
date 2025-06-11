@@ -3,6 +3,7 @@
         header("Location: pagamento.php");
         exit();
     }
+    $_SESSION['pagou'] = false;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,7 +35,8 @@
     <img src="Imagens/Cofesa Logo.png" height="60vh">
       <ul class="home-itens">
           <li><a href="index.php" id = "polos">POLOS</a></li>
-          <li><a href="produtos.php">PRODUTOS</a></li>
+          <li><a href="produtos.php" style = "background-color: rgb(0, 176, 0); color: white; width: 10vh; height: 6vh; border-radius: 5px;">PRODUTOS</a></li>
+          <li><a href="login.php">LOGIN</a></li>
       </ul>
     </div>
     <!--home Fim-->
